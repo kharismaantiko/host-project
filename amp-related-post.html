@@ -1,1 +1,35 @@
 
+<!DOCTYPE html><HTML dir='ltr' lang='id-ID'><head><meta charset='utf-8'/>
+<title>Related Post</title>
+<style>
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}body{margin:0;padding:0}
+.rekomendasi ul{background:#fff;list-style:none;margin:0;padding:5px 5px 10px;overflow:hidden;border-radius:0 0 5px 5px;border-top:none;}
+.rekomendasi li,.rekomendasi li img,.rekomendasi li a,.rekomendasi li a img{margin:0;padding:0;list-style:none;border:none;background:none;outline:none;}
+.rekomendasi ul{margin:0;list-style:none;color:#64707a;}
+.rekomendasi ul li img{display: flex;align-items:center;display:block;width:184px;height:134px}
+.rekomendasi ul li .item-thumbnail{display:block;margin:0 10px 0 10px;width:184px;height:134px;border:1px solid #f5f5f5;overflow:hidden;float:left;border-radius:5px;background-position:center;transition:all 0.5s ease-out;}
+@media only screen and (max-width:480px){
+.rekomendasi ul li img{display: flex;align-items:center;display:block;width:130px;height:80px}
+.rekomendasi ul li .item-thumbnail{display:block;margin:0 10px 0 10px;width:130px;height:80px;border:1px solid #f5f5f5;overflow:hidden;float:left;border-radius:5px;background-position:center;transition:all 0.5s ease-out;}
+.rekomendasi ul li{background-color:#fff;margin:0;padding:10px 0;padding-right:5px;position:relative;border-bottom:1px solid #f5f5f5;transition:all .3s;display:block;min-height:80px;padding-bottom:10px;}
+}
+.rekomendasi ul li .item-thumbnail:hover{-webkit-filter:brightness(0.4);transition:all 0.5s ease-out}
+.rekomendasi ul li{background-color:#fff;margin:0;padding:10px 0;padding-right:5px;position:relative;border-bottom:1px solid #f5f5f5;transition:all .3s;display:block;min-height:134px;padding-bottom:10px;}
+.rekomendasi ul li a:hover{color:#f72f2f;}
+.rekomendasi ul li .item-title a, .rekomendasi ul li a{color:#ff0000;transition:all .3s;display:block;height:100%;text-decoration:none}
+.rekomendasi ul li:hover{border-left: 3px solid #ff0000;padding-left: 2px;}
+.rekomendasi .widget-content ul li:hover a,.rekomendasi .widget-content ul li a:hover{color:#f72f2f;}
+.rekomendasi .item-snippet{display:none}
+.profile-img{display:inline;opacity:1;margin:0 6px 3px 0;}
+.rekomendasi .item-title{padding-bottom:.2em;padding:0 5px;}
+</style>
+</head>
+<body>
+<div class='rekomendasi'>
+<ul>
+<script>function getQueryVariable(r){for(var l=window.location.search.substring(1).split("&"),e=0;e<l.length;e++){var t=l[e].split("=");if(t[0]==r)return t[1]}return!1}function saringtags(r,l){for(var e=r.split("<"),t=0;t<e.length;t++)-1!=e[t].indexOf(">")&&(e[t]=e[t].substring(e[t].indexOf(">")+1,e[t].length));return e=e.join(""),e=e.substring(0,l-1)}var simg=getQueryVariable("si"),rsimg=(simg==false)?"/s72-c/":"/"+simg+"/";function relpostimgcuplik(r){for(var l=0;l<r.feed.entry.length;l++){var e=r.feed.entry[l];reljudul[relnojudul]=e.title.$t,postcontent="","content"in e?postcontent=e.content.$t:"summary"in e&&(postcontent=e.summary.$t),relcuplikan[relnojudul]=saringtags(postcontent,numchars),postimg="media$thumbnail"in e?e.media$thumbnail.url.replace(/.*?:\/\//g,"//").replace(/\/s[0-9]+(\-c)?\//,rsimg):"https://1.bp.blogspot.com/-LGEolwXn4BM/WS9-g9OMA_I/AAAAAAAAAU4/LWkMJrn8RI8m56N1U-10ZuLdAuFFJqTxQCLcB/s72/No%2BImage.png",relgambar[relnojudul]=postimg;for(var t=0;t<e.link.length;t++)if("alternate"==e.link[t].rel){relurls[relnojudul]=e.link[t].href;break}relnojudul++}}function contains(r,l){for(var e=0;e<r.length;e++)if(r[e]==l)return!0;return!1}function artikelterkait(){for(var r=new Array(0),l=new Array(0),e=new Array(0),t=new Array(0),a=0;a<relurls.length;a++)contains(r,relurls[a])||(r.length+=1,r[r.length-1]=relurls[a],l.length+=1,l[l.length-1]=reljudul[a],e.length+=1,e[e.length-1]=relcuplikan[a],t.length+=1,t[t.length-1]=relgambar[a]);for(reljudul=l,relurls=r,relcuplikan=e,relgambar=t,a=0;a<reljudul.length;a++){var n=Math.floor((reljudul.length-1)*Math.random()),u=reljudul[a],i=relurls[a],s=relcuplikan[a],o=relgambar[a];reljudul[a]=reljudul[n],relurls[a]=relurls[n],relcuplikan[a]=relcuplikan[n],relgambar[a]=relgambar[n],reljudul[n]=u,relurls[n]=i,relcuplikan[n]=s,relgambar[n]=o}for(var g,c=0,p=Math.floor((reljudul.length-1)*Math.random()),m=p,d=getQueryVariable("pos");c<relmaxtampil&&(relurls[p]==d||(g="<li><div class='item-content'>",g+="<div class='item-thumbnail'><a href='"+relurls[p]+"' rel='nofollow' target='_blank' title='"+reljudul[p]+"'><img src='"+relgambar[p]+"' alt='"+reljudul[p]+"' title='"+reljudul[p]+"' /></a></div>",g+="<div class='item-title'><a href='"+relurls[p]+"' target='_blank'>"+reljudul[p]+"</a></div>",g+="<div class='item-snippet'>"+relcuplikan[p]+" ... </div>",g+="<div class='clear'/></li>",document.write(g),++c!=relmaxtampil))&&(p<reljudul.length-1?p++:p=0,p!=m););}for(var labels=getQueryVariable("labels"),relmaxtampil=getQueryVariable("num"),urlsite=getQueryVariable("url"),res=labels.split(","),i=0,text="";res[i];)text+='<script src="'+urlsite+"/feeds/posts/default/-/"+res[i]+'?alt=json&amp;callback=relpostimgcuplik&amp;max-results=50"><\/script>',i++;var relnojudul=0,numchars=120,reljudul=new Array,relurls=new Array,relcuplikan=new Array,relgambar=new Array;document.write(text+'<script>artikelterkait();<\/script>');
+</script>
+</ul>
+</div>
+</body>
+</HTML>
